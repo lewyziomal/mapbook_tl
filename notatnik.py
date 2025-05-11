@@ -1,7 +1,4 @@
-users:list = [
-    {"name":"Zuzia","location":"Radzyń_Podlaski","posts":700},
-
-]
+users:list = [ {"name":"Zuzia","location":"Radzyń_Podlaski","posts":700}]
 print(users)
 
 def remove_user(users_data: list)->None:
