@@ -19,5 +19,5 @@ def main():
         if choice == "2": add_users(users)
         if choice == "3": remove_user(users)
 
-if _name_ == "_main_":
+if __name__ == '__main__':
     main()
