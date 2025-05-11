@@ -1,16 +1,21 @@
-def get_user_info(users_data: list) -> None:
+def get_user_info(users_data:list)->None:
+
     for user in users_data:
-        print(f"Twoj znajomy {user['name']}! z miejscowosci {user['location']} opublikował {user['posts']} postów")
+        print(f"Twój znajomy {user['name']}! z miejscowości{user["location"]} opublikował {user['posts']} postów")
 
 
-user_name = input("podaj imie nowego uzytkownika: "),
-user_location = input("podaj lokalizacje znajomego"),
-user_posts = input("oidaj liczbe postow"),
-users_data.append({"name": user_name, "location": user_location, "posts": user_posts})
 
 
-def remove_user(useers_data: list) -> None:
-    user_name = imput("podaj imie  uzytkownika do usuniecia: ")
-    for user in users_data
-        if user['name'] == user_name:
-            users.remove(user)
+def add_users(users_data: list)->None:
+
+    users_name=input("podaj imię nowego użytkownika ")
+    users_location=input("podaj lokalizacje nowego znajomego ")
+    users_posts=int(input("podaj liczbe postów: "))
+    users_data.append( {"name":users_name,"location":users_location,"posts":users_posts})
+
+def remove_user(users_data: list)->None:
+
+    user_name=input("podaj imię użytkownika do usuniecia: ")
+    for user in users_data:
+        if user["name"] == user_name:
+            users_data.remove(user)

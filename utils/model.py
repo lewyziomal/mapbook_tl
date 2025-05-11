@@ -1,6 +1,5 @@
-users:list = [
-    {"name":"Tomasz","location":"Prudnik","posts":400},
-    {"name":"Adrian","location":"Toruń","posts":500},
-    {"name":"Bartek","location":"Giżycko","posts":700},
-    {"name":"Bernard","location":"Ełk","posts":200}
+{"name":"Adrian","location": "Toruń","posts":400},
+    {"name":"Krzysztof","location": "Baiłobrzegi","posts":500},
+    {"name":"Maja","location":" Świecie","posts":300},
+    {"name":"Zuzia","location":" Radzyń_Podlaski","posts":700},
 ]

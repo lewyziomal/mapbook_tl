@@ -1,21 +1,23 @@
+from random import choice
+
 from utils.model import users
-from utils.controller import get_user_data, add_user
+from utils.controller import get_user_info, add_users, remove_user
 
 
 def main():
     while True:
 
-        print("MENU")
-        print("0 - zakoncz program ")
-        print("1 - pokaz co u znajomych")
+        print("==========MENU==========")
+        print("0 - zakończ program")
+        print("1 - pokaż co u znajomych")
         print("2 - dodaj nowego znajomego")
-        print("3 - usun znajomego")
-        print("==============================")
-        choice = input("wybierz opcje menu")
-        if choice == "0": break
-        if choice == "1": geu_user_info(info)
-        if choice == "2": add_user(users)
-        if choice == "3": add_user(users)
+        print("3 - usuń znajomego")
+        print('========================')
+        choice = input("wybierz opcje menu: ")
+        if  choice == "0": break
+        if  choice == "1": get_user_info(users)
+        if choice == "2": add_users(users)
+        if choice == "3": remove_user(users)
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     main()
