@@ -1,20 +1,36 @@
-users:list = [ {"name":"Zuzia","location":"Radzyń_Podlaski","posts":700}]
+users: list = [
+    {"name": "Adrian", "location": "Toruń", "posts": 400},
+    {"name": "Krzysztof", "location": "Baiłobrzegi", "posts": 500},
+    {"name": "Maja", "location": " Świecie", "posts": 300},
+    {"name": "Zuzia", "location": " Radzyń_Podlaski", "posts": 700},
+]
 
-print(users)
+import folium
 
-def update_user(users_data: list)->None:
 
-    user_name=input("podaj imię użytkownika którego dane chcesz zaktualizować: ")
+def get_coordinates(city_name: str) -> list:
+    import requests
+    from bs4 import BeautifulSoup
+    url = f"https://pl.wikipedia.org/wiki/{city_name}"
+    response = requests.get(url).text
+    response_html = BeautifulSoup(response, "html.parser")
+    latitude = float(response_html.select(".latitude")[1].text.replace(",", "."))
+    longitude = float(response_html.select(".longitude")[1].text.replace(",", "."))
+    print(latitude, longitude)
+
+
+def get_map(users_data: list) -> None:
+    import folium
+    mapa = folium.Map(location=[52.21, 21.0], zoom_start=6)
     for user in users_data:
-        if user["name"] == user_name:
-            user["name"] = input("podaj nowe imię użytkownika: ")
-            user["location"] = input("podaj nową lokalizaję użytkownika: ")
-            user["posts"] = int(input("podaj nową liczbę postów użytkownika : "))
+        print(user["location"])
+
+    folium.Marker(
+        location=get_coordinates(user["location"]),
+        popup=f"{user["location"]} {user['name']}
+    ).add_to(mapa)
 
 
-update_user(users)
+mapa.save("mapa.html")
 
-
-
-
-print(users)
+get_map(users)
