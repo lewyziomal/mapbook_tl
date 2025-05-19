@@ -3,7 +3,7 @@ import tkintermapview
 
 
 root = Tk()
-root.geometry("1200x760")
+root.geometry("1200x800")
 root.title("mapbook_tl")
 
 ramka_lista_obiektow=Frame(root)
